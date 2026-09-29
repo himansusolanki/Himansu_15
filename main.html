@@ -1,0 +1,108 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Tracking System</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>📦 Tracking System</h2>
+
+    <p>Enter your Tracking ID</p>
+
+    <input type="text" id="trackingId"
+           placeholder="Example: TRK123">
+
+    <br>
+
+    <button onclick="trackOrder()">Track</button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function trackOrder() {
+
+    var id = document.getElementById("trackingId").value;
+    var result = document.getElementById("result");
+
+    if (id == "TRK123") {
+
+        result.innerHTML =
+        "✅ Tracking ID: TRK123<br><br>" +
+        "📦 Status: In Transit<br>" +
+        "📍 Location: Ahmedabad<br>" +
+        "🚚 Expected Delivery: Tomorrow";
+
+    } 
+    else if (id == "TRK456") {
+
+        result.innerHTML =
+        "✅ Tracking ID: TRK456<br><br>" +
+        "📦 Status: Delivered<br>" +
+        "📍 Location: Mumbai<br>" +
+        "✔️ Delivered Successfully";
+
+    } 
+    else {
+
+        result.innerHTML =
+        "❌ Tracking ID not found.";
+
+    }
+}
+
+</script>
+
+</body>
+</html>
+```
